@@ -1,0 +1,24 @@
+<section id="projects" class="projects-section py-5">
+  <h2 class="section-title">Projects</h2>
+  <div class="cards">
+    <% data.projects.each do |project| %>
+      <div class="card-project">
+        <%= image_tag project.image, alt: project.name, class: "card-project-img" %>
+        <div class="card-project-body">
+          <h3 class="card-project-name"><%= project.name %></h3>
+          <p class="card-project-desc"><%= project.description %></p>
+          <div class="card-project-links">
+            <% link_to project.github, target: '_blank', class: 'card-link' do %>
+              <i class="fa-brands fa-github"></i> Code
+            <% end %>
+            <% if project.online %>
+              <% link_to project.url, target: '_blank', class: 'card-link card-link-live' do %>
+                <i class="fas fa-external-link-alt"></i> Live
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

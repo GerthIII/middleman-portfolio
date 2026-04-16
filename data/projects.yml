@@ -1,0 +1,20 @@
+- name: Pokeclo
+  description: An AI powered mobile first web app to build outfits in the store with clothes from your real closet.
+  image: projects/placeholder.png
+  url: https://www.pokeclo.online
+  github: https://github.com/GerthIII/pokeclo
+  online: true
+
+- name: AI Chatbot
+  description: A web-application with a built in chatbot for creating Pokemon teams for both newcomers and long-time fans.
+  image: projects/placeholder.png
+  url: https://www.poke-adventure-planner.site
+  github: https://github.com/GerthIII/pokemon-adventure-planner
+  online: true
+
+- name: KiFor Match
+  description: An app for connecting charities with donors. Under Construction.
+  image: projects/placeholder.png
+  url: https://
+  github: https://github.com/kwood6319/kifor-match
+  online: false

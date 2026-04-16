@@ -1,0 +1,21 @@
+// Bootstrap variable overrides
+// Full list: https://github.com/twbs/bootstrap/blob/master/scss/_variables.scss
+
+// General style
+$font-family-sans-serif:  $body-font;
+$headings-font-family:    $headers-font;
+$body-bg:                 $navy;
+$font-size-base: 1rem;
+
+// Colors
+$body-color: $lightest-slate;
+$primary:    $accent;
+$success:    $green;
+$info:       $yellow;
+$danger:     $red;
+$warning:    $orange;
+
+// Buttons & inputs' radius
+$border-radius:    4px;
+$border-radius-lg: 4px;
+$border-radius-sm: 4px;

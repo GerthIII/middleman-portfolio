@@ -1,0 +1,43 @@
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: $lightest-slate;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.section-title-light {
+  color: $lightest-slate;
+}
+
+.about-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  color: $slate;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.projects-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer-section {
+  background: $dark-navy;
+  margin-top: 3rem;
+}
+
+.footer-text {
+  color: $slate;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}

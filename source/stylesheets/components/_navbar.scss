@@ -1,0 +1,24 @@
+.navbar {
+  background: rgba($dark-navy, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  transition: background 0.3s ease;
+}
+
+.navbar-brand {
+  font-family: $headers-font;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: $accent !important;
+}
+
+.nav-link {
+  color: $lightest-slate !important;
+  font-size: 0.9rem;
+  margin-left: 1.5rem;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $accent !important;
+  }
+}

@@ -1,0 +1,37 @@
+.banner {
+  height: 100vh;
+  background: linear-gradient(135deg, $dark-navy 0%, $navy 50%, lighten($navy, 5%) 100%);
+}
+
+.banner-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: $lightest-slate;
+  margin-bottom: 0.5rem;
+}
+
+.banner-subtitle {
+  font-size: 1.5rem;
+  color: $accent;
+  font-weight: 400;
+}
+
+.btn-outline-light {
+  border-color: $accent;
+  color: $accent;
+
+  &:hover {
+    background: rgba($accent, 0.1);
+    border-color: $accent;
+    color: $accent;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner-title {
+    font-size: 2.5rem;
+  }
+  .banner-subtitle {
+    font-size: 1.1rem;
+  }
+}
