@@ -4,6 +4,10 @@
   url: https://www.pokeclo.online
   github: https://github.com/GerthIII/pokeclo
   online: true
+  team_role: Lead developer
+  video_url: https://www.youtube.com/embed/HPa0-5nrqKw
+  video_orientation: vertical
+  video_description: Mobile walkthrough of the outfit builder
   tech:
     - { name: Ruby, icon: "devicon-ruby-plain" }
     - { name: Rails, icon: "devicon-rails-plain" }
@@ -30,6 +34,10 @@
   url: https://www.poke-adventure-planner.site
   github: https://github.com/GerthIII/pokemon-adventure-planner
   online: true
+  team_role: Full-stack developer
+  video_url: https://www.youtube.com/embed/pbBK3yNYeFs
+  video_orientation: horizontal
+  video_description: Desktop demo of the team builder chatbot
   tech:
     - { name: Ruby, icon: "devicon-ruby-plain" }
     - { name: Rails, icon: "devicon-rails-plain" }
@@ -56,6 +64,7 @@
   url: https://
   github: https://github.com/kwood6319/kifor-match
   online: false
+  team_role: Full-stack developer
   tech:
     - { name: Ruby, icon: "devicon-ruby-plain" }
     - { name: Rails, icon: "devicon-rails-plain" }

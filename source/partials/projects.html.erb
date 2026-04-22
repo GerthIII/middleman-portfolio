@@ -13,34 +13,29 @@
     <div class="band-inner">
       <div class="cards">
         <% data.projects.each do |project| %>
-          <div class="card-project">
-            <%= image_tag project.image, alt: project.name, class: "card-project-img" %>
+          <article class="card-project">
+            <div class="card-project-media">
+              <%= image_tag project.image, alt: project.name, class: "card-project-img" %>
+            </div>
             <div class="card-project-body">
               <h3 class="card-project-name">
                 <%= link_to project.name, "/projects/#{project_slug(project)}.html" %>
               </h3>
-              <p class="card-project-desc"><%= project.description %></p>
-              <% if project.tech %>
-                <div class="card-project-tech">
-                  <% project.tech.each do |t| %>
-                    <span class="tech-icon" title="<%= t.name %>">
-                      <i class="<%= t.icon %>"></i>
-                    </span>
-                  <% end %>
-                </div>
+              <% if project.team_role %>
+                <p class="card-project-meta"><strong>Team Role:</strong> <%= project.team_role %></p>
               <% end %>
-              <div class="card-project-links">
-                <% link_to project.github, target: '_blank', class: 'card-link' do %>
-                  <i class="fa-brands fa-github"></i> Code
-                <% end %>
+              <% if project.tech %>
+                <p class="card-project-meta"><strong>Used:</strong> <%= project.tech.map(&:name).join(', ') %></p>
+              <% end %>
+              <p class="card-project-desc"><%= project.description %></p>
+              <div class="card-project-buttons">
+                <%= link_to "More Info", "/projects/#{project_slug(project)}.html", class: 'btn-project btn-project--secondary' %>
                 <% if project.online %>
-                  <% link_to project.url, target: '_blank', class: 'card-link card-link-live' do %>
-                    <i class="fas fa-external-link-alt"></i> Live
-                  <% end %>
+                  <%= link_to "Visit Project", project.url, target: '_blank', rel: 'noopener', class: 'btn-project btn-project--primary' %>
                 <% end %>
               </div>
             </div>
-          </div>
+          </article>
         <% end %>
       </div>
     </div>
