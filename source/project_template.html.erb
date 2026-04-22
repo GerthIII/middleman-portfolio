@@ -1,6 +1,8 @@
 <% project = data.projects.find { |p| project_slug(p) == slug } %>
 <% content_for :title do %><%= project.name %> | Glen Gerth<% end %>
 
+<%= partial 'partials/banner' %>
+
 <div class="content-wrapper project-detail">
   <% if project.recognition %>
     <section class="project-recognition">
@@ -19,7 +21,7 @@
     </section>
   <% end %>
 
-  <section class="project-section project-section--reverse">
+  <section class="project-section">
     <div class="project-section-text">
       <h2>What is <%= project.name %>?</h2>
       <p><%= project.overview || project.description %></p>
@@ -47,7 +49,26 @@
       </div>
     </div>
     <div class="project-section-media">
-      <% if project.phone_image %>
+      <% if project.video_url && project.video_orientation == 'vertical' %>
+        <div class="phone-frame phone-frame--detail">
+          <div class="phone-frame-notch"></div>
+          <div class="phone-frame-screen">
+            <iframe src="<%= project.video_url %>"
+                    title="<%= project.name %> Demo"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+        </div>
+      <% elsif project.video_url %>
+        <div class="video-wrapper video-<%= project.video_orientation || 'horizontal' %>">
+          <iframe src="<%= project.video_url %>"
+                  title="<%= project.name %> Demo"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+      <% elsif project.phone_image %>
         <div class="phone-frame phone-frame--detail">
           <div class="phone-frame-notch"></div>
           <div class="phone-frame-screen">
@@ -59,39 +80,6 @@
       <% end %>
     </div>
   </section>
-
-  <% if project.video_url %>
-    <section class="project-section">
-      <div class="project-section-text">
-        <h2>Demo</h2>
-        <% if project.video_description %>
-          <p><%= project.video_description %></p>
-        <% end %>
-      </div>
-      <div class="project-section-media">
-        <% if project.video_orientation == 'vertical' %>
-          <div class="phone-frame phone-frame--detail">
-            <div class="phone-frame-notch"></div>
-            <div class="phone-frame-screen">
-              <iframe src="<%= project.video_url %>"
-                      title="<%= project.name %> Demo"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
-            </div>
-          </div>
-        <% else %>
-          <div class="video-wrapper video-<%= project.video_orientation || 'horizontal' %>">
-            <iframe src="<%= project.video_url %>"
-                    title="<%= project.name %> Demo"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-          </div>
-        <% end %>
-      </div>
-    </section>
-  <% end %>
 
   <% if project.role %>
     <section class="project-section project-section--reverse">

@@ -25,10 +25,14 @@
     - { name: Bootstrap, icon: "devicon-bootstrap-plain" }
     - { name: SCSS, icon: "devicon-sass-original" }
   overview: |
-    Write a couple of sentences describing what Pokeclo is, who it's for, and the problem it solves.
+    Pokeclo is the digital home for your wardrobe, designed to make looking good feel entirely effortless. It’s for the days you’re staring at a full closet feeling like you have nothing to wear, or the moments you’re stuck in a loop of the same three outfits. By turning your physical clothes into a smart, digital library, Pokeclo hands the creative heavy lifting over to an AI stylist that knows your taste. It learns what you love and builds fresh, ready-to-wear looks so you don’t have to.
+
+    Even when you're out shopping, the guesswork is gone—just a quick scan of a new item shows you exactly how it fits into your current collection before you even reach the checkout. It’s not just an app; it’s the confidence of a professional stylist, tucked right in your pocket.
+
   role_image: projects/pokeclo-team.jpg
+  # Describe what you did on the team — your responsibilities, the parts you owned, collaboration style, etc.
   role: |
-    Describe what you did on the team — your responsibilities, the parts you owned, collaboration style, etc.
+    Pokeclo was built over a period of 10 days as the final product sprint for the Le Wagon Bootcamp. I served my team as the Lead Dev by organizing each morning's stand up meeting, and driving the technical and creative direction of the app. I was also in charge of implementing Pokeclo's AI features. 
   features:
     - title: Feature One
       description: What this feature does and why it matters to the user.
