@@ -1,43 +1,122 @@
-.section-title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: $lightest-slate;
-  margin-bottom: 2rem;
-  text-align: center;
+html {
+  scroll-behavior: smooth;
 }
 
-.section-title-light {
-  color: $lightest-slate;
+body {
+  background: $band-cream;
 }
 
-.about-section {
-  max-width: 800px;
+// Full-width section bands
+.band {
+  width: 100%;
+  padding: 3rem 1rem;
+  scroll-margin-top: 80px;
+
+  @media (min-width: 992px) {
+    padding: 4.5rem 1rem;
+  }
+}
+
+.band-inner {
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-.about-text {
-  font-size: 1.05rem;
-  color: $slate;
-  line-height: 1.8;
+.band-lavender { background: $band-lavender; }
+.band-cream    { background: $band-cream; }
+.band-pink     { background: $band-pink; }
+
+.band-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $text-primary;
+  margin-bottom: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.band-subtitle {
+  color: $text-secondary;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+
+  a { color: $accent; text-decoration: none; &:hover { text-decoration: underline; } }
+}
+
+// ABOUT — two-column text + photo
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 3fr 2fr;
+    gap: 3rem;
+  }
+}
+
+.about-text-col {
+  p {
+    color: $text-primary;
+    line-height: 1.75;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.about-photo {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+// Legacy classes kept for the project detail pages
+.content-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+.section-card {
+  padding: 2rem 0;
+  margin-top: 2rem;
+  scroll-margin-top: 80px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $text-primary;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.projects-section {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-.footer-section {
-  background: $dark-navy;
-  margin-top: 3rem;
-}
-
 .footer-text {
-  color: $slate;
+  color: $text-secondary;
   font-size: 1rem;
   margin-bottom: 1rem;
 }
 
-html {
-  scroll-behavior: smooth;
+.btn-outline-primary {
+  border-color: $accent;
+  color: $accent;
+
+  &:hover {
+    background: $accent;
+    border-color: $accent;
+    color: white;
+  }
+}
+
+@media (min-width: 992px) {
+  .content-wrapper {
+    padding: 0 2rem 3rem;
+  }
+
+  .band-heading {
+    font-size: 1.75rem;
+  }
 }

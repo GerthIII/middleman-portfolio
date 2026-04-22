@@ -1,0 +1,66 @@
+<% project = data.projects.find { |p| project_slug(p) == slug } %>
+<% content_for :title do %><%= project.name %> | Glen Gerth<% end %>
+
+<div class="content-wrapper project-detail">
+  <a href="/#projects" class="project-back">&larr; Back to projects</a>
+
+  <section class="project-section">
+    <div class="project-section-text">
+      <h2>What is <%= project.name %>?</h2>
+      <p><%= project.overview || project.description %></p>
+      <% if project.tech %>
+        <div class="tech-list-static">
+          <% project.tech.each do |t| %>
+            <span class="tech-chip">
+              <i class="<%= t.icon %>"></i>
+              <span><%= t.name %></span>
+            </span>
+          <% end %>
+        </div>
+      <% end %>
+      <% if project.online && project.url && !project.url.to_s.strip.empty? && project.url != 'https://' %>
+        <% link_to project.url, target: '_blank', rel: 'noopener', class: 'project-link-btn' do %>
+          Visit <%= project.name %> <i class="fas fa-external-link-alt"></i>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="project-section-media">
+      <%= image_tag project.image, alt: project.name %>
+    </div>
+  </section>
+
+  <% if project.role %>
+    <section class="project-section project-section--reverse">
+      <div class="project-section-media">
+        <%= image_tag((project.role_image || project.image), alt: "#{project.name} — Team Role") %>
+      </div>
+      <div class="project-section-text">
+        <h2>Team Role</h2>
+        <p><%= project.role %></p>
+      </div>
+    </section>
+  <% end %>
+
+  <% if project.features && !project.features.empty? %>
+    <section class="project-features">
+      <h1>Features</h1>
+      <% project.features.each_with_index do |feature, i| %>
+        <div class="project-section <%= 'project-section--reverse' if i.odd? %>">
+          <div class="project-section-text">
+            <h3><%= feature.title %></h3>
+            <p><%= feature.description %></p>
+          </div>
+          <div class="project-section-media">
+            <%= image_tag feature.image, alt: feature.title %>
+          </div>
+        </div>
+      <% end %>
+    </section>
+  <% end %>
+
+  <div class="project-footer">
+    <% link_to project.github, target: '_blank', rel: 'noopener', class: 'project-link-btn project-link-btn--ghost' do %>
+      <i class="fa-brands fa-github"></i> View Code
+    <% end %>
+  </div>
+</div>

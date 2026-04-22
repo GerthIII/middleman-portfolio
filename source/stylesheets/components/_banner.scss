@@ -1,37 +1,72 @@
-.banner {
-  height: 100vh;
-  background: linear-gradient(135deg, $dark-navy 0%, $navy 50%, lighten($navy, 5%) 100%);
+.banner-band {
+  padding-top: 6rem;
+
+  @media (min-width: 992px) {
+    padding-top: 7rem;
+  }
 }
 
-.banner-title {
-  font-size: 4rem;
+.banner-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 2rem;
+    justify-content: center;
+  }
+}
+
+.banner-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+
+  @media (min-width: 992px) {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+.banner-intro {
+  max-width: 640px;
+}
+
+.banner-name {
+  font-family: $headers-font;
+  font-size: 2rem;
   font-weight: 700;
-  color: $lightest-slate;
-  margin-bottom: 0.5rem;
-}
+  color: $text-primary;
+  margin: 0 0 0.35rem;
 
-.banner-subtitle {
-  font-size: 1.5rem;
-  color: $accent;
-  font-weight: 400;
-}
-
-.btn-outline-light {
-  border-color: $accent;
-  color: $accent;
-
-  &:hover {
-    background: rgba($accent, 0.1);
-    border-color: $accent;
-    color: $accent;
+  @media (min-width: 992px) {
+    font-size: 2.75rem;
   }
 }
 
-@media (max-width: 576px) {
-  .banner-title {
-    font-size: 2.5rem;
+.banner-tagline {
+  color: $text-primary;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0 0 0.5rem;
+
+  strong {
+    font-weight: 600;
   }
-  .banner-subtitle {
-    font-size: 1.1rem;
-  }
+}
+
+.banner-tech {
+  color: $text-secondary;
+  font-size: 0.85rem;
+  margin: 0;
+  letter-spacing: 0.01em;
 }

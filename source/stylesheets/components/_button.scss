@@ -11,7 +11,7 @@
   position: absolute;
   top: -32px;
   background: $accent;
-  color: $dark-navy;
+  color: white;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 4px 10px;
@@ -39,7 +39,7 @@
   transition: background 0.2s ease, color 0.2s ease;
 
   &:hover {
-    background: rgba($accent, 0.1);
-    color: $accent;
+    background: $accent;
+    color: white;
   }
 }

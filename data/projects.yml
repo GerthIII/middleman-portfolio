@@ -1,16 +1,54 @@
 - name: Pokeclo
   description: An AI powered mobile first web app to build outfits in the store with clothes from your real closet.
-  image: projects/placeholder.png
+  image: projects/Pokeclo.png
   url: https://www.pokeclo.online
   github: https://github.com/GerthIII/pokeclo
   online: true
+  tech:
+    - { name: Ruby, icon: "devicon-ruby-plain" }
+    - { name: Rails, icon: "devicon-rails-plain" }
+    - { name: PostgreSQL, icon: "devicon-postgresql-plain" }
+    - { name: Stimulus, icon: "devicon-javascript-plain" }
+    - { name: Bootstrap, icon: "devicon-bootstrap-plain" }
+    - { name: SCSS, icon: "devicon-sass-original" }
+  overview: |
+    Write a couple of sentences describing what Pokeclo is, who it's for, and the problem it solves.
+  role_image: projects/Pokeclo.png
+  role: |
+    Describe what you did on the team — your responsibilities, the parts you owned, collaboration style, etc.
+  features:
+    - title: Feature One
+      description: What this feature does and why it matters to the user.
+      image: projects/Pokeclo.png
+    - title: Feature Two
+      description: What this feature does and why it matters to the user.
+      image: projects/Pokeclo.png
 
 - name: AI Chatbot
   description: A web-application with a built in chatbot for creating Pokemon teams for both newcomers and long-time fans.
-  image: projects/placeholder.png
+  image: projects/AI_Chatbot.png
   url: https://www.poke-adventure-planner.site
   github: https://github.com/GerthIII/pokemon-adventure-planner
   online: true
+  tech:
+    - { name: Ruby, icon: "devicon-ruby-plain" }
+    - { name: Rails, icon: "devicon-rails-plain" }
+    - { name: PostgreSQL, icon: "devicon-postgresql-plain" }
+    - { name: Stimulus, icon: "devicon-javascript-plain" }
+    - { name: Bootstrap, icon: "devicon-bootstrap-plain" }
+    - { name: SCSS, icon: "devicon-sass-original" }
+  overview: |
+    Write a couple of sentences describing what AI Chatbot is, who it's for, and the problem it solves.
+  role_image: projects/AI_Chatbot.png
+  role: |
+    Describe what you did on the team — your responsibilities, the parts you owned, collaboration style, etc.
+  features:
+    - title: Feature One
+      description: What this feature does and why it matters to the user.
+      image: projects/AI_Chatbot.png
+    - title: Feature Two
+      description: What this feature does and why it matters to the user.
+      image: projects/AI_Chatbot.png
 
 - name: KiFor Match
   description: An app for connecting charities with donors. Under Construction.
@@ -18,3 +56,19 @@
   url: https://
   github: https://github.com/kwood6319/kifor-match
   online: false
+  tech:
+    - { name: Ruby, icon: "devicon-ruby-plain" }
+    - { name: Rails, icon: "devicon-rails-plain" }
+    - { name: PostgreSQL, icon: "devicon-postgresql-plain" }
+  overview: |
+    Write a couple of sentences describing what KiFor Match is, who it's for, and the problem it solves.
+  role_image: projects/placeholder.png
+  role: |
+    Describe what you did on the team — your responsibilities, the parts you owned, collaboration style, etc.
+  features:
+    - title: Feature One
+      description: What this feature does and why it matters to the user.
+      image: projects/placeholder.png
+    - title: Feature Two
+      description: What this feature does and why it matters to the user.
+      image: projects/placeholder.png

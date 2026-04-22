@@ -1,4 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
+  var navbar = document.querySelector(".navbar");
+  var banner = document.getElementById("banner");
+  if (navbar && banner) {
+    navbar.classList.add("navbar--hidden");
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        navbar.classList.toggle("navbar--hidden", entry.isIntersecting);
+      });
+    }, { threshold: 0 }).observe(banner);
+  }
+
   var btn = document.getElementById("copy-email");
   var tooltip = document.getElementById("copy-tooltip");
 

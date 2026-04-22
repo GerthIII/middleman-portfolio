@@ -1,24 +1,48 @@
-<section id="projects" class="projects-section py-5">
-  <h2 class="section-title">Projects</h2>
-  <div class="cards">
-    <% data.projects.each do |project| %>
-      <div class="card-project">
-        <%= image_tag project.image, alt: project.name, class: "card-project-img" %>
-        <div class="card-project-body">
-          <h3 class="card-project-name"><%= project.name %></h3>
-          <p class="card-project-desc"><%= project.description %></p>
-          <div class="card-project-links">
-            <% link_to project.github, target: '_blank', class: 'card-link' do %>
-              <i class="fa-brands fa-github"></i> Code
-            <% end %>
-            <% if project.online %>
-              <% link_to project.url, target: '_blank', class: 'card-link card-link-live' do %>
-                <i class="fas fa-external-link-alt"></i> Live
+<section id="projects">
+  <div class="band band-pink">
+    <div class="band-inner text-center">
+      <h2 class="band-heading"><span>&#128193;</span> Applications</h2>
+      <p class="band-subtitle">Here are some of the projects I've worked on recently.</p>
+      <p class="band-subtitle">
+        For more, feel free to check out my
+        <a href="https://github.com/GerthIII" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>.
+      </p>
+    </div>
+  </div>
+  <div class="band band-cream">
+    <div class="band-inner">
+      <div class="cards">
+        <% data.projects.each do |project| %>
+          <div class="card-project">
+            <%= image_tag project.image, alt: project.name, class: "card-project-img" %>
+            <div class="card-project-body">
+              <h3 class="card-project-name">
+                <%= link_to project.name, "/projects/#{project_slug(project)}.html" %>
+              </h3>
+              <p class="card-project-desc"><%= project.description %></p>
+              <% if project.tech %>
+                <div class="card-project-tech">
+                  <% project.tech.each do |t| %>
+                    <span class="tech-icon" title="<%= t.name %>">
+                      <i class="<%= t.icon %>"></i>
+                    </span>
+                  <% end %>
+                </div>
               <% end %>
-            <% end %>
+              <div class="card-project-links">
+                <% link_to project.github, target: '_blank', class: 'card-link' do %>
+                  <i class="fa-brands fa-github"></i> Code
+                <% end %>
+                <% if project.online %>
+                  <% link_to project.url, target: '_blank', class: 'card-link card-link-live' do %>
+                    <i class="fas fa-external-link-alt"></i> Live
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </section>

@@ -1,26 +1,29 @@
+// Mobile-first: single column
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
 .card-project {
-  background: $dark-navy;
-  border: 1px solid lighten($navy, 10%);
-  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 
   &:hover {
     transform: translateY(-4px);
-    border-color: $accent;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   }
 }
 
 .card-project-img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
+  object-position: top;
 }
 
 .card-project-body {
@@ -30,15 +33,40 @@
 .card-project-name {
   font-size: 1.1rem;
   font-weight: 700;
-  color: $lightest-slate;
+  color: $text-primary;
   margin-bottom: 8px;
 }
 
 .card-project-desc {
   font-size: 0.875rem;
-  color: $slate;
+  color: $text-secondary;
   line-height: 1.5;
   margin-bottom: 16px;
+}
+
+.card-project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tech-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.05);
+  color: $text-secondary;
+  font-size: 1.1rem;
+  transition: color 0.2s ease, background 0.2s ease;
+
+  &:hover {
+    color: $accent;
+    background: rgba($accent, 0.1);
+  }
 }
 
 .card-project-links {
@@ -47,7 +75,7 @@
 }
 
 .card-link {
-  color: $light-slate;
+  color: $text-secondary;
   text-decoration: none;
   font-size: 0.85rem;
   transition: color 0.2s ease;
@@ -65,8 +93,22 @@
   color: $accent;
 }
 
-@media (max-width: 767px) {
+// Tablet: 2 columns
+@media (min-width: 768px) {
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+// Desktop: 3 columns, taller images
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+  }
+
+  .card-project-img {
+    height: 240px;
   }
 }
