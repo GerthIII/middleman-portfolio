@@ -2,9 +2,24 @@
 <% content_for :title do %><%= project.name %> | Glen Gerth<% end %>
 
 <div class="content-wrapper project-detail">
-  <a href="/#projects" class="project-back">&larr; Back to projects</a>
+  <% if project.recognition %>
+    <section class="project-recognition">
+      <div class="project-recognition-icon"><%= (project.recognition.icon || "&#127775;").html_safe %></div>
+      <div class="project-recognition-body">
+        <h2 class="project-recognition-title"><%= project.recognition.title %></h2>
+        <% if project.recognition.subtitle %>
+          <p class="project-recognition-subtitle"><%= project.recognition.subtitle %></p>
+        <% end %>
+        <% if project.recognition.url %>
+          <% link_to project.recognition.url, target: '_blank', rel: 'noopener', class: 'project-link-btn' do %>
+            <%= project.recognition.cta || 'Learn more' %> <i class="fas fa-external-link-alt"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </section>
+  <% end %>
 
-  <section class="project-section">
+  <section class="project-section project-section--reverse">
     <div class="project-section-text">
       <h2>What is <%= project.name %>?</h2>
       <p><%= project.overview || project.description %></p>
@@ -18,30 +33,63 @@
           <% end %>
         </div>
       <% end %>
-      <% if project.online && project.url && !project.url.to_s.strip.empty? && project.url != 'https://' %>
-        <% link_to project.url, target: '_blank', rel: 'noopener', class: 'project-link-btn' do %>
-          Visit <%= project.name %> <i class="fas fa-external-link-alt"></i>
+      <div class="project-cta-group">
+        <% if project.online && project.url && !project.url.to_s.strip.empty? && project.url != 'https://' %>
+          <% link_to project.url, target: '_blank', rel: 'noopener', class: 'project-link-btn' do %>
+            Visit <%= project.name %> <i class="fas fa-external-link-alt"></i>
+          <% end %>
         <% end %>
-      <% end %>
+        <% if project.github %>
+          <% link_to project.github, target: '_blank', rel: 'noopener', class: 'project-link-btn' do %>
+            <i class="fa-brands fa-github"></i> View Code
+          <% end %>
+        <% end %>
+      </div>
     </div>
     <div class="project-section-media">
-      <%= image_tag project.image, alt: project.name %>
+      <% if project.phone_image %>
+        <div class="phone-frame phone-frame--detail">
+          <div class="phone-frame-notch"></div>
+          <div class="phone-frame-screen">
+            <%= image_tag project.phone_image, alt: project.name %>
+          </div>
+        </div>
+      <% else %>
+        <%= image_tag project.image, alt: project.name %>
+      <% end %>
     </div>
   </section>
 
   <% if project.video_url %>
-    <section class="project-demo">
-      <h2 class="project-demo-title">Demo</h2>
-      <div class="video-wrapper video-<%= project.video_orientation || 'horizontal' %>">
-        <iframe src="<%= project.video_url %>"
-                title="<%= project.name %> Demo"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+    <section class="project-section">
+      <div class="project-section-text">
+        <h2>Demo</h2>
+        <% if project.video_description %>
+          <p><%= project.video_description %></p>
+        <% end %>
       </div>
-      <% if project.video_description %>
-        <p class="project-demo-desc"><%= project.video_description %></p>
-      <% end %>
+      <div class="project-section-media">
+        <% if project.video_orientation == 'vertical' %>
+          <div class="phone-frame phone-frame--detail">
+            <div class="phone-frame-notch"></div>
+            <div class="phone-frame-screen">
+              <iframe src="<%= project.video_url %>"
+                      title="<%= project.name %> Demo"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+            </div>
+          </div>
+        <% else %>
+          <div class="video-wrapper video-<%= project.video_orientation || 'horizontal' %>">
+            <iframe src="<%= project.video_url %>"
+                    title="<%= project.name %> Demo"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+        <% end %>
+      </div>
     </section>
   <% end %>
 
@@ -61,22 +109,52 @@
     <section class="project-features">
       <h1>Features</h1>
       <% project.features.each_with_index do |feature, i| %>
-        <div class="project-section <%= 'project-section--reverse' if i.odd? %>">
-          <div class="project-section-text">
-            <h3><%= feature.title %></h3>
-            <p><%= feature.description %></p>
-          </div>
-          <div class="project-section-media">
-            <%= image_tag feature.image, alt: feature.title %>
-          </div>
+        <div class="project-section project-section--feature <%= 'project-section--reverse' if i.odd? %>">
+          <% if i.odd? %>
+            <div class="project-section-media">
+              <% if project.phone_image %>
+                <div class="phone-frame phone-frame--detail">
+                  <div class="phone-frame-notch"></div>
+                  <div class="phone-frame-screen">
+                    <%= image_tag feature.image, alt: feature.title %>
+                  </div>
+                </div>
+              <% else %>
+                <%= image_tag feature.image, alt: feature.title %>
+              <% end %>
+            </div>
+            <div class="project-section-text">
+              <h3><%= feature.title %></h3>
+              <p><%= feature.description %></p>
+            </div>
+          <% else %>
+            <div class="project-section-text">
+              <h3><%= feature.title %></h3>
+              <p><%= feature.description %></p>
+            </div>
+            <div class="project-section-media">
+              <% if project.phone_image %>
+                <div class="phone-frame phone-frame--detail">
+                  <div class="phone-frame-notch"></div>
+                  <div class="phone-frame-screen">
+                    <%= image_tag feature.image, alt: feature.title %>
+                  </div>
+                </div>
+              <% else %>
+                <%= image_tag feature.image, alt: feature.title %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </section>
   <% end %>
 
-  <div class="project-footer">
-    <% link_to project.github, target: '_blank', rel: 'noopener', class: 'project-link-btn project-link-btn--ghost' do %>
-      <i class="fa-brands fa-github"></i> View Code
-    <% end %>
-  </div>
+  <section class="project-more">
+    <h2 class="project-more-title">Want to see more?</h2>
+    <p class="project-more-subtitle">Check out the other projects I've been building.</p>
+    <a href="/#projects" class="project-link-btn project-more-btn">
+      Explore other projects <i class="fas fa-arrow-right"></i>
+    </a>
+  </section>
 </div>

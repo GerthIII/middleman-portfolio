@@ -1,6 +1,9 @@
 - name: Pokeclo
+  emoji: "&#129509;"
   description: An AI powered mobile first web app to build outfits in the store with clothes from your real closet.
-  image: projects/Pokeclo.png
+  image: projects/pokeclo-logo.png
+  card_image: projects/pokeclo-card.png
+  phone_image: projects/pokeclo-phone.png
   url: https://www.pokeclo.online
   github: https://github.com/GerthIII/pokeclo
   online: true
@@ -8,6 +11,12 @@
   video_url: https://www.youtube.com/embed/HPa0-5nrqKw
   video_orientation: vertical
   video_description: Mobile walkthrough of the outfit builder
+  recognition:
+    icon: "&#127942;"
+    title: Featured on Le Wagon's Global Showcase
+    subtitle: One of ~100 graduate projects selected from over 30,000 Le Wagon alumni worldwide.
+    cta: View on Le Wagon
+    url: https://projects.lewagon.com/projects/pokeclo
   tech:
     - { name: Ruby, icon: "devicon-ruby-plain" }
     - { name: Rails, icon: "devicon-rails-plain" }
@@ -17,7 +26,7 @@
     - { name: SCSS, icon: "devicon-sass-original" }
   overview: |
     Write a couple of sentences describing what Pokeclo is, who it's for, and the problem it solves.
-  role_image: projects/Pokeclo.png
+  role_image: projects/pokeclo-team.jpg
   role: |
     Describe what you did on the team — your responsibilities, the parts you owned, collaboration style, etc.
   features:
@@ -29,12 +38,14 @@
       image: projects/Pokeclo.png
 
 - name: AI Chatbot
+  emoji: "&#129302;"
   description: A web-application with a built in chatbot for creating Pokemon teams for both newcomers and long-time fans.
   image: projects/AI_Chatbot.png
+  card_image: projects/AI_Chatbot_card.png
   url: https://www.poke-adventure-planner.site
   github: https://github.com/GerthIII/pokemon-adventure-planner
   online: true
-  team_role: Full-stack developer
+  team_role: Lead developer
   video_url: https://www.youtube.com/embed/pbBK3yNYeFs
   video_orientation: horizontal
   video_description: Desktop demo of the team builder chatbot
@@ -59,6 +70,7 @@
       image: projects/AI_Chatbot.png
 
 - name: KiFor Match
+  emoji: "&#129309;"
   description: An app for connecting charities with donors. Under Construction.
   image: projects/placeholder.png
   url: https://

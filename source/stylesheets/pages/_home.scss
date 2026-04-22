@@ -57,6 +57,20 @@ body {
   }
 }
 
+.about-inner + .about-inner {
+  margin-top: 3rem;
+
+  @media (min-width: 992px) {
+    margin-top: 4.5rem;
+  }
+}
+
+.about-inner--reverse {
+  @media (min-width: 768px) {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
 .about-text-col {
   p {
     color: $text-primary;
