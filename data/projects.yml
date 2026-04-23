@@ -38,7 +38,7 @@
     - title: AI Clothing Analyzer
       description: Implemented an intelligent wardrobe digitizer that uses Computer Vision to extract garment metadata from user photos. By automating the transition from image to structured data, I reduced manual input by 80% and enabled an AI-driven recommendation engine to instantly generate outfits by pairing the new item with the existing PostgreSQL-stored wardrobe.
       image: projects/pokeclo-feature-1.mp4
-    - title: Feature Two
+    - title: AI Outfit Builder
       description: Developed a Slot-Based Recommendation Engine that assembles cohesive outfits by querying categorized wardrobe data. By integrating an LLM-driven narrative layer, the app provides users with a professional 'Styling Rationale' for every suggestion, explaining the visual and textural synergy behind each garment choice to help users learn the principles of fashion as they use the app.
       image: projects/pokeclo-feature-2.mp4
     - title: Digital Fitting Room
