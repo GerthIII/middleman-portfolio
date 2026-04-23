@@ -1,7 +1,7 @@
 - name: Pokeclo
   emoji: "&#129509;"
   icon_image: projects/pokeclo-logo.png
-  description: An AI powered mobile first web app to build outfits in the store with clothes from your real closet.
+  description: Take Your Closet Anywhere! Pokeclo is an AI powered mobile first web app to build outfits in the store with clothes from your real closet. Built by a team of four as the Final Project at Le Wagon's AI Web Dev Bootcamp.
   image: projects/pokeclo-logo.png
   card_image: projects/pokeclo-card.png
   phone_image: projects/pokeclo-phone.png
@@ -35,18 +35,21 @@
   role: |
     Pokeclo was built over a period of 10 days as the final product sprint for the Le Wagon Bootcamp. I served my team as the Lead Dev by organizing each morning's stand up meeting, and driving the technical and creative direction of the app. I was also in charge of implementing Pokeclo's AI features. 
   features:
-    - title: Feature One
-      description: What this feature does and why it matters to the user.
+    - title: AI Clothing Analyzer
+      description: Implemented an intelligent wardrobe digitizer that uses Computer Vision to extract garment metadata from user photos. By automating the transition from image to structured data, I reduced manual input by 80% and enabled an AI-driven recommendation engine to instantly generate outfits by pairing the new item with the existing PostgreSQL-stored wardrobe.
       image: projects/pokeclo-feature-1.mp4
     - title: Feature Two
-      description: What this feature does and why it matters to the user.
+      description: Developed a Slot-Based Recommendation Engine that assembles cohesive outfits by querying categorized wardrobe data. By integrating an LLM-driven narrative layer, the app provides users with a professional 'Styling Rationale' for every suggestion, explaining the visual and textural synergy behind each garment choice to help users learn the principles of fashion as they use the app.
       image: projects/pokeclo-feature-2.mp4
+    - title: Digital Fitting Room
+      description: This allows you to see what the outfit looks like on you so you can be sure you like it! By passing your base photo and the recommended clothing items to Google's Gemini, we use its Nanobanana tool to digitally dress you in the outfit you just made. If you're in the store and can't make a decision, this feature is sure to make the decision a no-brainer! 
+      image: projects/AI-tryon.png
 
-- name: AI Chatbot
+- name: AI Team Planner
   emoji: "&#129302;"
-  description: A web-application with a built in chatbot for creating Pokemon teams for both newcomers and long-time fans.
-  image: projects/AI_Chatbot.png
-  card_image: projects/AI_Chatbot_card.png
+  description: Built by a team of four as part of the AI Week Project at Le Wagon's AI Web Dev Bootcamp. We build the team so you can stop wasting time and start playing!
+  image: projects/AI_Team_Planner.png
+  card_image: projects/AI_Team_Planner_card.png
   url: https://www.poke-adventure-planner.site
   github: https://github.com/GerthIII/pokemon-adventure-planner
   online: true
@@ -62,7 +65,7 @@
     - { name: Bootstrap, icon: "devicon-bootstrap-plain" }
     - { name: SCSS, icon: "devicon-sass-original" }
   overview: |
-    Our AI Chatbot was built over a period of 5 days(AI Week) as a product sprint during the Le Wagon Bootcamp. 
+    A web-application with a built in chatbot for creating teams of fictional characters for both newcomers and long-time fans. Our AI Team Planner was built over a period of 5 days as a product sprint during the Le Wagon Bootcamp. This was our first time leveraging AI in a web app and was a great opportunity for us to prepare for our final project, Pokeclo.
   role_image: projects/pokeclo-team.jpg
   role: |
     Took the project from empty repo to a deployed app. Cloned and configured the Rails template, scaffolded Devise for user authentication, worked with the team to scope the feature set, planned the route map, and wired each route through to its controller and view. Handled the operational side end-to-end — registered the domain, deployed to Heroku, and debugged production issues through launch.
@@ -74,7 +77,7 @@
 
         For the team management features, I followed a standard MVC pattern to build out the CRUD actions, using a simple form partial for the views to keep things dry. The technical core relied on a many to many association between Teams and Pokemon. I set up the UI with six slots using select tag to pass an array of pokemon ids, which let the Rails association auto-syncing handle the TeamMember join records automatically. This was crucial for getting the data ready for the AI to make recommendations based on our JSON seed data.
         
-      image: projects/ai-chatbot-feature-1.mp4
+      image: projects/ai-team-planner-feature-1.mp4
 
 - name: KiFor Match
   emoji: "&#129309;"
