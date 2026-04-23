@@ -38,6 +38,9 @@ end
 
 require 'yaml'
 
+# Partials are includes, not pages — don't build them as standalone HTML.
+ignore 'partials/*'
+
 YAML.load_file(File.expand_path('data/projects.yml', __dir__)).each do |p|
   slug = p['name'].downcase.gsub(/\s+/, '-').gsub(/[^a-z0-9-]/, '')
   proxy "/projects/#{slug}.html",
