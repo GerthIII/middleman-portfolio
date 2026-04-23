@@ -104,11 +104,11 @@
                 <div class="phone-frame phone-frame--detail">
                   <div class="phone-frame-notch"></div>
                   <div class="phone-frame-screen">
-                    <%= image_tag feature.image, alt: feature.title %>
+                    <%= feature_media(feature) %>
                   </div>
                 </div>
               <% else %>
-                <%= image_tag feature.image, alt: feature.title %>
+                <%= feature_media(feature) %>
               <% end %>
             </div>
             <div class="project-section-text">
@@ -125,11 +125,11 @@
                 <div class="phone-frame phone-frame--detail">
                   <div class="phone-frame-notch"></div>
                   <div class="phone-frame-screen">
-                    <%= image_tag feature.image, alt: feature.title %>
+                    <%= feature_media(feature) %>
                   </div>
                 </div>
               <% else %>
-                <%= image_tag feature.image, alt: feature.title %>
+                <%= feature_media(feature) %>
               <% end %>
             </div>
           <% end %>

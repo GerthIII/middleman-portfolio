@@ -36,10 +36,10 @@
   features:
     - title: Feature One
       description: What this feature does and why it matters to the user.
-      image: projects/Pokeclo.png
+      image: projects/pokeclo-feature-1.mp4
     - title: Feature Two
       description: What this feature does and why it matters to the user.
-      image: projects/Pokeclo.png
+      image: projects/pokeclo-feature-2.mp4
 
 - name: AI Chatbot
   emoji: "&#129302;"

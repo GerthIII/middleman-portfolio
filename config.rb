@@ -20,6 +20,20 @@ helpers do
   def project_slug(project)
     project.name.downcase.gsub(/\s+/, '-').gsub(/[^a-z0-9-]/, '')
   end
+
+  def feature_media(feature)
+    if feature.image.to_s.match?(/\.(mp4|webm)\z/i)
+      ext = File.extname(feature.image).delete('.').downcase
+      source = tag(:source, src: image_path(feature.image), type: "video/#{ext}")
+      content_tag(:video, source,
+                  autoplay: true, muted: true, loop: true, playsinline: true,
+                  preload: 'metadata',
+                  poster: (feature.poster ? image_path(feature.poster) : nil),
+                  'aria-label': feature.title)
+    else
+      image_tag(feature.image, alt: feature.title)
+    end
+  end
 end
 
 require 'yaml'
