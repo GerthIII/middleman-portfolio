@@ -1,17 +1,14 @@
-<section id="projects">
-  <div class="band band-stone">
-    <div class="band-inner text-center">
-      <h2 class="band-heading"><span>&#128193;</span> Applications</h2>
-      <p class="band-subtitle">Here are some of the projects I've worked on recently.</p>
-      <p class="band-subtitle">
-        For more, feel free to check out my
-        <a href="https://github.com/GerthIII" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>.
-      </p>
-    </div>
+<section id="projects" class="band band-cream">
+  <div class="band-inner text-center projects-intro">
+    <h2 class="band-heading"><span>&#128193;</span> Applications</h2>
+    <p class="band-subtitle">Here are some of the projects I've worked on recently.</p>
+    <p class="band-subtitle">
+      For more, feel free to check out my
+      <a href="https://github.com/GerthIII" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>.
+    </p>
   </div>
-  <div class="band band-cream">
-    <div class="band-inner">
-      <div class="cards">
+  <div class="band-inner">
+    <div class="cards">
         <% data.projects.each do |project| %>
           <article class="card-project">
             <div class="card-project-media <%= 'card-project-media--padded' if project.card_image_padded %> <%= "card-project-media--#{project.card_style}" if project.card_style %>">
@@ -29,7 +26,7 @@
             <div class="card-project-body">
               <h3 class="card-project-name">
                 <% link_to "/projects/#{project_slug(project)}.html" do %>
-                  <% if project.emoji %><span class="card-project-emoji"><%= project.emoji.html_safe %></span><% end %><%= project.name %>
+                  <% if project.icon_image %><%= image_tag project.icon_image, alt: '', class: 'card-project-icon' %><% elsif project.emoji %><span class="card-project-emoji"><%= project.emoji.html_safe %></span><% end %><%= project.name %>
                 <% end %>
               </h3>
               <% if project.team_role %>
@@ -48,7 +45,6 @@
             </div>
           </article>
         <% end %>
-      </div>
     </div>
   </div>
 </section>

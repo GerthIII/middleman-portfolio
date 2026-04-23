@@ -1,5 +1,6 @@
 - name: Pokeclo
   emoji: "&#129509;"
+  icon_image: projects/pokeclo-logo.png
   description: An AI powered mobile first web app to build outfits in the store with clothes from your real closet.
   image: projects/pokeclo-logo.png
   card_image: projects/pokeclo-card.png
@@ -62,9 +63,9 @@
     - { name: SCSS, icon: "devicon-sass-original" }
   overview: |
     Write a couple of sentences describing what AI Chatbot is, who it's for, and the problem it solves.
-  role_image: projects/AI_Chatbot.png
+  role_image: projects/pokeclo-team.jpg
   role: |
-    Describe what you did on the team — your responsibilities, the parts you owned, collaboration style, etc.
+    Our AI Chatbot was built over a period of 5 days(AI Week) as a product sprint during the Le Wagon Bootcamp. I served my team as the Lead Dev by organizing each morning's stand up meeting, and driving the technical and creative direction of the app.
   features:
     - title: Feature One
       description: What this feature does and why it matters to the user.
