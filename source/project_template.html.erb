@@ -1,7 +1,7 @@
 <% project = data.projects.find { |p| project_slug(p) == slug } %>
 <% content_for :title do %><%= project.name %> | Glen Gerth<% end %>
 
-<%= partial 'partials/banner' %>
+<%= partial 'partials/project_banner', locals: { project: project } %>
 
 <div class="content-wrapper project-detail">
   <% if project.recognition %>
@@ -25,16 +25,6 @@
     <div class="project-section-text">
       <h2>What is <%= project.name %>?</h2>
       <p><%= project.overview || project.description %></p>
-      <% if project.tech %>
-        <div class="tech-list-static">
-          <% project.tech.each do |t| %>
-            <span class="tech-chip">
-              <i class="<%= t.icon %>"></i>
-              <span><%= t.name %></span>
-            </span>
-          <% end %>
-        </div>
-      <% end %>
       <div class="project-cta-group">
         <% if project.online && project.url && !project.url.to_s.strip.empty? && project.url != 'https://' %>
           <% link_to project.url, target: '_blank', rel: 'noopener', class: 'project-link-btn' do %>
@@ -97,7 +87,7 @@
     <section class="project-features">
       <h1>Features</h1>
       <% project.features.each_with_index do |feature, i| %>
-        <div class="project-section project-section--feature <%= 'project-section--reverse' if i.odd? %>">
+        <div class="project-section project-section--feature <%= 'project-section--feature-wide' unless project.phone_image %> <%= 'project-section--reverse' if i.odd? %>">
           <% if i.odd? %>
             <div class="project-section-media">
               <% if project.phone_image %>

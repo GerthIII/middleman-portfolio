@@ -62,17 +62,19 @@
     - { name: Bootstrap, icon: "devicon-bootstrap-plain" }
     - { name: SCSS, icon: "devicon-sass-original" }
   overview: |
-    Write a couple of sentences describing what AI Chatbot is, who it's for, and the problem it solves.
+    Our AI Chatbot was built over a period of 5 days(AI Week) as a product sprint during the Le Wagon Bootcamp. 
   role_image: projects/pokeclo-team.jpg
   role: |
-    Our AI Chatbot was built over a period of 5 days(AI Week) as a product sprint during the Le Wagon Bootcamp. I served my team as the Lead Dev by organizing each morning's stand up meeting, and driving the technical and creative direction of the app.
+    Took the project from empty repo to a deployed app. Cloned and configured the Rails template, scaffolded Devise for user authentication, worked with the team to scope the feature set, planned the route map, and wired each route through to its controller and view. Handled the operational side end-to-end — registered the domain, deployed to Heroku, and debugged production issues through launch.
   features:
-    - title: Feature One
-      description: What this feature does and why it matters to the user.
-      image: projects/AI_Chatbot.png
-    - title: Feature Two
-      description: What this feature does and why it matters to the user.
-      image: projects/AI_Chatbot.png
+    - title: Team Builder
+      description: |
+        
+        Since this was our first time working together as a team, I spent a lot of my time coaching, and setting expectations. I actually found myself coaching more than coding at first, so I had to learn how to delegate tasks effectively to make sure I was also hitting my own technical goals.  When I hit walls I made sure to ask for help early so as not to waste time, and set the example for my team. It was a constant balance of managing our growth while implementing the logic the app needed to actually work.
+
+        For the team management features, I followed a standard MVC pattern to build out the CRUD actions, using a simple form partial for the views to keep things dry. The technical core relied on a many to many association between Teams and Pokemon. I set up the UI with six slots using select tag to pass an array of pokemon ids, which let the Rails association auto-syncing handle the TeamMember join records automatically. This was crucial for getting the data ready for the AI to make recommendations based on our JSON seed data.
+        
+      image: projects/ai-chatbot-feature-1.mp4
 
 - name: KiFor Match
   emoji: "&#129309;"

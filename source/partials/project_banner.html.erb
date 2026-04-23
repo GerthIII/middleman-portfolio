@@ -1,0 +1,23 @@
+<section id="banner" class="band band-stone banner-band project-banner">
+  <div class="band-inner banner-inner">
+    <% if project.icon_image %>
+      <%= image_tag project.icon_image, alt: '', class: 'banner-avatar banner-avatar--icon' %>
+    <% elsif project.emoji %>
+      <div class="banner-avatar banner-avatar--emoji"><%= project.emoji.html_safe %></div>
+    <% end %>
+    <div class="banner-intro">
+      <h1 class="banner-name"><%= project.name %></h1>
+      <p class="banner-tagline"><%= project.description %></p>
+      <% if project.tech %>
+        <div class="tech-list-static banner-tech-list">
+          <% project.tech.each do |t| %>
+            <span class="tech-chip">
+              <i class="<%= t.icon %>"></i>
+              <span><%= t.name %></span>
+            </span>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

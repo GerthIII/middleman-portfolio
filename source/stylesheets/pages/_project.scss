@@ -45,6 +45,18 @@
   }
 }
 
+// Features without a phone frame (e.g. desktop screen recordings) use the full
+// content width so the demo is readable, with text stacked above the media.
+.project-section.project-section--feature-wide {
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+
+    .project-section-text  { order: 1; }
+    .project-section-media { order: 2; justify-content: center; }
+  }
+}
+
 .project-section-media {
   display: flex;
   align-items: center;
