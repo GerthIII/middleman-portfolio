@@ -26,10 +26,10 @@ body {
 .band-cream { background: $band-cream; }
 
 .projects-intro {
-  margin-bottom: 3rem;
+  margin-bottom: 0;
 
   @media (min-width: 992px) {
-    margin-bottom: 4.5rem;
+    margin-bottom: 0.25rem;
   }
 }
 

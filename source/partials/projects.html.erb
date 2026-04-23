@@ -1,50 +1,50 @@
 <section id="projects" class="band band-cream">
   <div class="band-inner text-center projects-intro">
-    <h2 class="band-heading"><span>&#128193;</span> Applications</h2>
-    <p class="band-subtitle">Here are some of the projects I've worked on recently.</p>
-    <p class="band-subtitle">
-      For more, feel free to check out my
-      <a href="https://github.com/GerthIII" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>.
-    </p>
+    <h2 class="band-heading"><span>&#128193;</span> Projects</h2>
+    <!--<p class="band-subtitle">Here are some of the projects I've worked on recently.</p>-->
+    <!--<p class="band-subtitle">-->
+    <!--For more, feel free to check out my-->
+    <!--<a href="https://github.com/GerthIII" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>.-->
+    <!--</p>-->
   </div>
   <div class="band-inner">
     <div class="cards">
-        <% data.projects.each do |project| %>
-          <article class="card-project">
-            <div class="card-project-media <%= 'card-project-media--padded' if project.card_image_padded %> <%= "card-project-media--#{project.card_style}" if project.card_style %>">
-              <% if project.card_style == 'phone' %>
-                <div class="phone-frame">
-                  <div class="phone-frame-notch"></div>
-                  <div class="phone-frame-screen">
-                    <%= image_tag((project.card_image || project.image), alt: project.name) %>
-                  </div>
+      <% data.projects.each do |project| %>
+        <article class="card-project">
+          <div class="card-project-media <%= 'card-project-media--padded' if project.card_image_padded %> <%= "card-project-media--#{project.card_style}" if project.card_style %>">
+            <% if project.card_style == 'phone' %>
+              <div class="phone-frame">
+                <div class="phone-frame-notch"></div>
+                <div class="phone-frame-screen">
+                  <%= image_tag((project.card_image || project.image), alt: project.name) %>
                 </div>
-              <% else %>
-                <%= image_tag((project.card_image || project.image), alt: project.name, class: "card-project-img") %>
-              <% end %>
-            </div>
-            <div class="card-project-body">
-              <h3 class="card-project-name">
-                <% link_to "/projects/#{project_slug(project)}.html" do %>
-                  <% if project.icon_image %><%= image_tag project.icon_image, alt: '', class: 'card-project-icon' %><% elsif project.emoji %><span class="card-project-emoji"><%= project.emoji.html_safe %></span><% end %><%= project.name %>
-                <% end %>
-              </h3>
-              <% if project.team_role %>
-                <p class="card-project-meta"><strong>Team Role:</strong> <%= project.team_role %></p>
-              <% end %>
-              <% if project.tech %>
-                <p class="card-project-meta"><strong>Used:</strong> <%= project.tech.map(&:name).join(', ') %></p>
-              <% end %>
-              <p class="card-project-desc"><%= project.description %></p>
-              <div class="card-project-buttons">
-                <%= link_to "More Info", "/projects/#{project_slug(project)}.html", class: 'btn-project btn-project--secondary' %>
-                <% if project.online %>
-                  <%= link_to "Visit Project", project.url, target: '_blank', rel: 'noopener', class: 'btn-project btn-project--primary' %>
-                <% end %>
               </div>
+            <% else %>
+              <%= image_tag((project.card_image || project.image), alt: project.name, class: "card-project-img") %>
+            <% end %>
+          </div>
+          <div class="card-project-body">
+            <h3 class="card-project-name">
+              <% link_to "/projects/#{project_slug(project)}.html" do %>
+                <% if project.icon_image %><%= image_tag project.icon_image, alt: '', class: 'card-project-icon' %><% elsif project.emoji %><span class="card-project-emoji"><%= project.emoji.html_safe %></span><% end %><%= project.name %>
+              <% end %>
+            </h3>
+            <% if project.team_role %>
+              <p class="card-project-meta"><strong>Team Role:</strong> <%= project.team_role %></p>
+            <% end %>
+            <% if project.tech %>
+              <p class="card-project-meta"><strong>Used:</strong> <%= project.tech.map(&:name).join(', ') %></p>
+            <% end %>
+            <p class="card-project-desc"><%= project.description %></p>
+            <div class="card-project-buttons">
+              <%= link_to "More Info", "/projects/#{project_slug(project)}.html", class: 'btn-project btn-project--secondary' %>
+              <% if project.online %>
+                <%= link_to "Visit Project", project.url, target: '_blank', rel: 'noopener', class: 'btn-project btn-project--primary' %>
+              <% end %>
             </div>
-          </article>
-        <% end %>
+          </div>
+        </article>
+      <% end %>
     </div>
   </div>
 </section>
