@@ -80,9 +80,9 @@
       image: projects/ai-team-planner-feature-1.mp4
 
 - name: KiFor Match
-  emoji: "&#129309;"
-  description: An app for connecting charities with donors. Under Construction.
-  image: projects/placeholder.png
+  emoji: "&#10084;&#65039;"
+  description: An app for connecting charities with donors.
+  image: projects/kifor-match-logo.png
   url: https://
   github: https://github.com/kwood6319/kifor-match
   online: false

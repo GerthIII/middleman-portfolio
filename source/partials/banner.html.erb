@@ -3,8 +3,21 @@
     <%= image_tag 'profile.jpg', alt: 'Glen Gerth', class: 'banner-avatar' %>
     <div class="banner-intro">
       <h1 class="banner-name">Glen Gerth</h1>
-      <p class="banner-tagline">I'm a <strong>full-stack developer</strong> who enjoys building web applications that solve real problems.</p>
-      <p class="banner-tech">Ruby &middot; Rails &middot; JavaScript &middot; PostgreSQL &middot; HTML &middot; CSS/SCSS</p>
+      <p class="banner-tagline">Full-Stack Developer | Leveraging New Technologies to Engineer Better Solutions</p>
+      <div class="tech-list-static banner-tech-list">
+        <span class="tech-chip"><i class="devicon-ruby-plain"></i><span>Ruby</span></span>
+        <span class="tech-chip"><i class="devicon-rails-plain"></i><span>Rails</span></span>
+        <span class="tech-chip"><i class="devicon-javascript-plain"></i><span>JavaScript</span></span>
+        <span class="tech-chip"><i class="devicon-postgresql-plain"></i><span>PostgreSQL</span></span>
+        <span class="tech-chip"><i class="devicon-sass-original"></i><span>SCSS</span></span>
+      </div>
+      <% if false # AI tools row — disabled for now to reduce banner crowding %>
+        <div class="tech-list-static banner-tech-list banner-tech-list--ai">
+          <span class="tech-chip-label">AI tools</span>
+          <span class="tech-chip"><%= image_tag 'logos/gemini.svg', alt: '', class: 'tech-chip-logo' %><span>Gemini / AI Studio</span></span>
+          <span class="tech-chip"><%= image_tag 'logos/claude.svg', alt: '', class: 'tech-chip-logo' %><span>Claude Code</span></span>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>

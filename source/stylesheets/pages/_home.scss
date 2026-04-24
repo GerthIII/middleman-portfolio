@@ -34,13 +34,17 @@ body {
 }
 
 .band-heading {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: $text-primary;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+
+  @media (min-width: 992px) {
+    font-size: 2.75rem;
+  }
 }
 
 .band-subtitle {
@@ -135,9 +139,5 @@ body {
 @media (min-width: 992px) {
   .content-wrapper {
     padding: 0 2rem 3rem;
-  }
-
-  .band-heading {
-    font-size: 1.75rem;
   }
 }

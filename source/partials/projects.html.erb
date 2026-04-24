@@ -29,6 +29,9 @@
                 <% if project.icon_image %><%= image_tag project.icon_image, alt: '', class: 'card-project-icon' %><% elsif project.emoji %><span class="card-project-emoji"><%= project.emoji.html_safe %></span><% end %><%= project.name %>
               <% end %>
             </h3>
+            <% unless project.online %>
+              <p class="card-project-status"><i class="fa-solid fa-person-digging"></i> Work in progress &mdash; not yet live</p>
+            <% end %>
             <% if project.team_role %>
               <p class="card-project-meta"><strong>Team Role:</strong> <%= project.team_role %></p>
             <% end %>
@@ -40,6 +43,8 @@
               <%= link_to "More Info", "/projects/#{project_slug(project)}.html", class: 'btn-project btn-project--secondary' %>
               <% if project.online %>
                 <%= link_to "Visit Project", project.url, target: '_blank', rel: 'noopener', class: 'btn-project btn-project--primary' %>
+              <% else %>
+                <span class="btn-project btn-project--disabled" aria-disabled="true"><i class="fa-solid fa-hammer"></i> Coming Soon</span>
               <% end %>
             </div>
           </div>
