@@ -8,6 +8,7 @@
     <section class="project-recognition">
       <div class="project-recognition-icon"><%= (project.recognition.icon || "&#127775;").html_safe %></div>
       <div class="project-recognition-body">
+        <span class="project-recognition-eyebrow">Featured</span>
         <h2 class="project-recognition-title"><%= project.recognition.title %></h2>
         <% if project.recognition.subtitle %>
           <p class="project-recognition-subtitle"><%= project.recognition.subtitle %></p>
